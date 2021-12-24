@@ -1,13 +1,20 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {ActivityIndicator, FlatList, Image, Text, View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {PokemonCard} from '../components/PokemonCard';
 import {usePokemons} from '../hooks/usePokemons';
 import {styles} from '../styles';
+import SplashScreen from 'react-native-splash-screen';
 
 export const HomeScreen = () => {
   const {top} = useSafeAreaInsets();
   const {pokemons, getPokemons} = usePokemons();
+
+  useEffect(() => {
+    if (pokemons.length > 0) {
+      SplashScreen.hide();
+    }
+  }, [pokemons]);
 
   return (
     <>
