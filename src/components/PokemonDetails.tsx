@@ -101,7 +101,7 @@ export const PokemonDetails = ({pokemon, color}: Props) => {
                 <View
                   key={stat.stat.name + index}
                   style={{flexDirection: 'row', marginBottom: 5}}>
-                  <Text style={{...styles.regularText, width: 170}}>
+                  <Text style={{...styles.regularText, width: 200}}>
                     {stat.stat.name.toLocaleUpperCase()}:
                   </Text>
                   <Text

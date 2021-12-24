@@ -24,7 +24,7 @@ export const SearchInput = ({onDebounce}: Props) => {
   return (
     <View style={styles.textBackground}>
       <TextInput
-        placeholder="Search Pokemon by name or #"
+        placeholder="Search Pokemon..."
         style={{...styles.textInput, top: Platform.OS === 'ios' ? 0 : 2}}
         autoCapitalize="none"
         autoCorrect={false}
@@ -63,6 +63,6 @@ const styles = StyleSheet.create({
   },
   textInput: {
     flex: 1,
-    fontSize: 18,
+    fontSize: 16,
   },
 });
