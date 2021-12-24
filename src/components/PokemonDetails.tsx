@@ -127,6 +127,7 @@ const styles = StyleSheet.create({
   container: {
     marginHorizontal: 20,
     marginTop: 370,
+    marginBottom: 80,
   },
   title: {
     fontSize: 22,

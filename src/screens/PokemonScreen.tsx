@@ -12,10 +12,10 @@ import {RootStackParams} from '../navigator/StackNavigator';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {FadeInImage} from '../components/FadeInImage';
 import {usePokemon} from '../hooks/usePokemon';
-import Icon from 'react-native-vector-icons/Ionicons';
 import {PokemonDetails} from '../components/PokemonDetails';
+import Icon from 'react-native-vector-icons/Ionicons';
 
-interface Props extends StackScreenProps<RootStackParams, 'Pokemon'> {}
+interface Props extends StackScreenProps<RootStackParams, 'PokemonDetail'> {}
 
 export const PokemonScreen = ({navigation, route}: Props) => {
   const {pokemon, color} = route.params;

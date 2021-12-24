@@ -9,8 +9,8 @@ import {
 } from 'react-native';
 import {Pokemon} from '../interfaces/pokemon.interface';
 import {FadeInImage} from './FadeInImage';
-import ImageColors from 'react-native-image-colors';
 import {useNavigation} from '@react-navigation/native';
+import ImageColors from 'react-native-image-colors';
 
 const windowWidth = Dimensions.get('window').width;
 
@@ -29,20 +29,24 @@ export const PokemonCard = ({pokemon}: Props) => {
     }
 
     const getColors = async () => {
-      const colors = await ImageColors.getColors(pokemon.picture, {
-        fallback: 'grey',
-      });
+      try {
+        const colors = await ImageColors.getColors(pokemon.picture, {
+          fallback: 'grey',
+        });
 
-      switch (colors.platform) {
-        case 'android':
-          setBgColor(colors.dominant!);
-          break;
-        case 'ios':
-          setBgColor(colors.primary);
-          break;
-        default:
-          setBgColor('grey');
-          break;
+        switch (colors.platform) {
+          case 'android':
+            setBgColor(colors.dominant!);
+            break;
+          case 'ios':
+            setBgColor(colors.primary);
+            break;
+          default:
+            setBgColor('grey');
+            break;
+        }
+      } catch (err) {
+        console.log(err);
       }
     };
 
@@ -56,7 +60,9 @@ export const PokemonCard = ({pokemon}: Props) => {
   return (
     <TouchableOpacity
       activeOpacity={0.9}
-      onPress={() => navigation.navigate('Pokemon', {pokemon, color: bgColor})}>
+      onPress={() =>
+        navigation.navigate('PokemonDetail', {pokemon, color: bgColor})
+      }>
       <View style={{...styles.container, backgroundColor: bgColor}}>
         <View>
           <Text style={styles.name}>

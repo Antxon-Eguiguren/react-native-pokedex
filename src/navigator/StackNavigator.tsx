@@ -5,8 +5,8 @@ import {HomeScreen} from '../screens/HomeScreen';
 import {PokemonScreen} from '../screens/PokemonScreen';
 
 export type RootStackParams = {
-  Home: undefined;
-  Pokemon: {
+  PokemonList: undefined;
+  PokemonDetail: {
     pokemon: Pokemon;
     color: string;
   };
@@ -21,8 +21,8 @@ export const StackNavigator = () => {
         headerShown: false,
         cardStyle: {backgroundColor: 'white'},
       }}>
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Pokemon" component={PokemonScreen} />
+      <Stack.Screen name="PokemonList" component={HomeScreen} />
+      <Stack.Screen name="PokemonDetail" component={PokemonScreen} />
     </Stack.Navigator>
   );
 };

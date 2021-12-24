@@ -35,7 +35,7 @@ export const HomeScreen = () => {
                 marginTop: top + 20,
                 marginBottom: 20,
               }}>
-              Pokedex
+              Pokemon
             </Text>
           }
         />
